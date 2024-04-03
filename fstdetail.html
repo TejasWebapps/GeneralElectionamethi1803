@@ -124,11 +124,21 @@ function filterData() {
             const filteredData = dataTable.filter(row => row[16] === zone);
 
             // Extract the desired columns (columns 17 and 18)
-            const resultData = filteredData.length > 0 ?
-                `अधिकारी का नाम व पदनाम : ${filteredData[0][17]}<br>
-                 पुलिस अधिकारी का नाम व पदनाम: ${filteredData[0][18]}<br>
-                 पुलिस अधिकारी का मोबाइल नम्बर : ${filteredData[0][19]}<br>
-                 ड्यूटी का समय: ${filteredData[0][20]}` : 'No data found';
+            let resultData = '';
+
+            if (filteredData.length > 0) {
+                resultData += '<ul>';
+                filteredData.forEach(row => {
+                    resultData += `<li>अधिकारी का नाम व पदनाम: ${row[17]}</li>`;
+                    resultData += `<li>पुलिस अधिकारी का नाम व पदनाम: ${row[18]}</li>`;
+                    resultData += `<li>पुलिस अधिकारी का मोबाइल नंबर: ${row[19]}</li>`;
+                    resultData += `<li>ड्यूटी का समय: ${row[20]}</li>`;
+                    resultData += '<br>'; // Add gap between each result
+                });
+                resultData += '</ul>';
+            } else {
+                resultData = 'No data found';
+            }
 
             // Display the result
             document.getElementById('result').innerHTML = resultData;
