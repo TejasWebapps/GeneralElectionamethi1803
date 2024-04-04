@@ -129,6 +129,7 @@ function filterData() {
             if (filteredData.length > 0) {
                 resultData += '<ul>';
                 filteredData.forEach(row => {
+		    resultData += '<br>';
                     resultData += `<li>अधिकारी का नाम व पदनाम: ${row[17]}</li>`;
 		    resultData += `<li>अधिकारी का मोबाइल नंबर: <a href="tel:${row[18]}">${row[18]}</a></li>`;
                     resultData += `<li>पुलिस अधिकारी का नाम व पदनाम: ${row[19]}</li>`;
