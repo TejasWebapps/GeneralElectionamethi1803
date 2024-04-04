@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>जोन का विवरण खोजें </title>
+<title>FST टीम का विवरण खोजें </title>
 <style>
 /* Add your custom styles here */
 
@@ -82,8 +82,8 @@ button:hover {
 </head>
 <body>
 <div class="container">
-  <h1>जोन का विवरण खोजें</h1>
-  <label for="zoneDropdown">जोन चुनें:</label>
+  <h1>FST टीम का विवरण खोजें</h1>
+  <label for="zoneDropdown">विधानसभा क्षेत्र चुनें:</label>
   <select id="zoneDropdown">
     <option value="">Select Zone</option>
   </select>
@@ -130,9 +130,14 @@ function filterData() {
                 resultData += '<ul>';
                 filteredData.forEach(row => {
                     resultData += `<li>अधिकारी का नाम व पदनाम: ${row[17]}</li>`;
-                    resultData += `<li>पुलिस अधिकारी का नाम व पदनाम: ${row[18]}</li>`;
-                    resultData += `<li>पुलिस अधिकारी का मोबाइल नंबर: ${row[19]}</li>`;
-                    resultData += `<li>ड्यूटी का समय: ${row[20]}</li>`;
+		    resultData += `<li>अधिकारी का मोबाइल नंबर: <a href="tel:${row[18]}">${row[18]}</a></li>`;
+                    resultData += `<li>पुलिस अधिकारी का नाम व पदनाम: ${row[19]}</li>`;
+                    resultData += `<li>पुलिस अधिकारी का मोबाइल नंबर: <a href="tel:${row[20]}">${row[20]}</a></li>`;
+                    resultData += `<li>पुलिस अधिकारी का नाम व पदनाम: ${row[21]}</li>`;
+		    resultData += `<li>पुलिस अधिकारी का मोबाइल नंबर: <a href="tel:${row[22]}">${row[22]}</a></li>`;
+                    resultData += `<li>पुलिस अधिकारी का नाम व पदनाम: ${row[23]}</li>`;
+                    resultData += `<li>पुलिस अधिकारी का मोबाइल नंबर:  <a href="tel:${row[24]}">${row[24]}</a></li>`;
+		    resultData += `<li>ड्यूटी का समय: ${row[25]}</li>`;
                     resultData += '<br>'; // Add gap between each result
                 });
                 resultData += '</ul>';
