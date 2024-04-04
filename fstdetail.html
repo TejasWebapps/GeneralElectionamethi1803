@@ -18,10 +18,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .container {
+    width: 90%;
     max-width: 800px;
     background-color: rgba(255, 255, 255, 0.8); /* Added transparency for better visibility */
     padding: 20px;
@@ -83,12 +84,14 @@ button:hover {
 <body>
 <div class="container">
   <h1>FST टीम का विवरण खोजें</h1>
-  <label for="zoneDropdown">विधानसभा क्षेत्र चुनें:</label>
-  <select id="zoneDropdown">
-    <option value="">Select Zone</option>
-  </select>
-  <br>
-  <button onclick="filterData()">विवरण खोजें</button>
+  <form>
+    <label for="zoneDropdown">विधानसभा क्षेत्र चुनें:</label>
+    <select id="zoneDropdown">
+      <option value="">Select Zone</option>
+    </select>
+    <br>
+    <button type="button" onclick="filterData()">विवरण खोजें</button>
+  </form>
   <div id="result"></div>
 </div>
 
